@@ -3,15 +3,19 @@ package com.bridgelabz.employeewage;
 public class EmployeeWageComputation {
 	public static final int is_full_time = 1;
 	public static final int is_part_time = 2;
-
+	public static final int NumOfWorkingDays = 20;
+	public static final int MaxWorkingHrs = 100;
+	
 	public static void main(String[] args) {
 		int EmpWagePerHr = 20;
-		int EmpWorkingDays = 20;
 		int EmpWage=0;
 		int EmpHrs = 0;
+		int TotalEmpHrs=0;
 		int EmpTotalWage = 0;
+		int TotalWorkingDays = 0;
 		
-		for (int i=0 ; i<=EmpWorkingDays; i++) {
+		while (TotalEmpHrs <= MaxWorkingHrs && TotalWorkingDays < NumOfWorkingDays) {
+			TotalWorkingDays ++;
 			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 			switch (empCheck) {
 				case is_full_time :
@@ -23,15 +27,11 @@ public class EmployeeWageComputation {
 				default :
 					EmpHrs = 0;
 			}
-			EmpWage = EmpHrs * EmpWagePerHr;
-			EmpTotalWage += EmpWage;
-			System.out.println("Emp wage :" +EmpWage);
+			TotalEmpHrs += EmpHrs;
+			System.out.println("Day : " +TotalWorkingDays+ " EmpHrs: " +EmpHrs);
 		}		
-		System.out.println("Employee Total wage is " +EmpTotalWage);
-		
-
-		
-
+		int TotalEmpWage = TotalEmpHrs * EmpWagePerHr;
+		System.out.println("Employee Total wage is " +TotalEmpWage);
 	}
 
 }
