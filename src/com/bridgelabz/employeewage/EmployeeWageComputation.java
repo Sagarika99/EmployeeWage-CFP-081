@@ -6,7 +6,7 @@ public class EmployeeWageComputation {
 	public static final int NumOfWorkingDays = 20;
 	public static final int MaxWorkingHrs = 100;
 	
-	public static void main(String[] args) {
+	public static void Compute() {
 		int EmpWagePerHr = 20;
 		int EmpWage=0;
 		int EmpHrs = 0;
